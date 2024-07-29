@@ -12,7 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composebaseproject.ui.theme.ComposeBaseProjectTheme
+import com.example.composebaseproject.ui.userlistscreen.UserListScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +23,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeBaseProjectTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    UserListScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }

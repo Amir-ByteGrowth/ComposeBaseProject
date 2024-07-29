@@ -114,4 +114,8 @@ dependencies {
     //navigation animation library
     implementation(libs.accompanist.navigation.animation)
 
+    //Chucker for debuging api
+    debugImplementation( libs.library)
+    releaseImplementation( libs.library.no.op)
+
 }
