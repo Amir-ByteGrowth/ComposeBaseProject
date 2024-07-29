@@ -4,8 +4,7 @@ import com.example.composebaseproject.MyApplication
 import com.example.composebaseproject.R
 import com.example.composebaseproject.data.local.database.AppDao
 import com.example.composebaseproject.data.local.datastore.DataStoreProvider
-import com.example.composebaseproject.data.models.MotivationDataEntity
-import com.example.composebaseproject.data.models.Suggestion
+import com.example.composebaseproject.data.models.MovieDb
 import com.example.composebaseproject.data.models.UserData
 import com.example.composebaseproject.data.remote.ApiService
 import com.example.composebaseproject.data.remote.Resource
@@ -101,27 +100,15 @@ class MainRepository @Inject constructor(
     val getShowIntro = dataStoreProvider.showIntroScreenFlow
     suspend fun setShowIntro(value: Boolean) = dataStoreProvider.saveIntroScreen(value)
 
-    /////
 
 
-//    suspend fun getMotivationList() = apiService.getMotivationList()
+//    //////local data base////////
 //
-//    fun getAllMotivation() = localDataSource.getAllMotivation()
-//
-//    suspend fun insertMotivation(motivationDataEntity: MotivationDataEntity) =
-//        localDataSource.insertQrCode(motivationDataEntity = motivationDataEntity)
-//
-//
-//    suspend fun insertSuggestion(suggestion: Suggestion) {
-//        localDataSource.insertSuggestion(suggestion)
-//    }
-//
-//    suspend fun getSuggestions(handle: String = "a"): List<Suggestion> {
-//        return localDataSource.getSuggestions(handle)
-//    }
-//
-//    fun getSuggestionsList(handle: String = "a"): Flow<List<Suggestion>> {
-//        return localDataSource.getSuggestionsList()
-//    }
+    fun getAllMovies() = localDataSource.getAll()
+
+    fun insert(movie: MovieDb) {
+        localDataSource.insertAll(movie)
+    }
+
 
 }

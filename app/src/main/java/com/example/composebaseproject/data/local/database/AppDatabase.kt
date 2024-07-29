@@ -5,13 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.composebaseproject.constants.AppConstants
-import com.example.composebaseproject.data.models.MotivationDataEntity
-import com.example.composebaseproject.data.models.Suggestion
+import com.example.composebaseproject.data.models.MovieDb
 
 
 @Database(
-    entities = [MotivationDataEntity::class, Suggestion::class],
-    version = 2,
+    entities = [MovieDb::class],
+    version = 5,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase(){

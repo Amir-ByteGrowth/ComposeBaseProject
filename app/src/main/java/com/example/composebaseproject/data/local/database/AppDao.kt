@@ -4,29 +4,24 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.composebaseproject.data.models.MotivationDataEntity
-import com.example.composebaseproject.data.models.MotivationDataItem
-import com.example.composebaseproject.data.models.Suggestion
+import com.example.composebaseproject.data.models.MovieDb
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AppDao {
 
 
-    // to get list of qr codes dependent upon viewType either scanned or generated qr
+    @Query("SELECT * FROM movie_table")
+    fun getAll(): Flow<List<MovieDb>>
 
-//    @Query("SELECT * FROM motiviations_table")
-//    fun getAllMotivation(): List<MotivationDataEntity>
+    @Insert
+    fun insertAll(vararg movieItems: MovieDb)
 
-    // below is the insert method for
-    // adding a new entry to our database.
-//    @Insert(onConflict = OnConflictStrategy.IGNORE)
-//    suspend fun insertQrCode(motivationDataEntity: MotivationDataEntity)
-//
-////    //to insert suggestions
-//    @Insert
-//    suspend fun insertSuggestion(suggestion: Suggestion)
+    @Query("DELETE FROM movie_table WHERE id IN (:ids)")
+    fun delete(ids: List<Int>)
 
+//    @Query("UPDATE movie_table SET title = :newTitle WHERE id = :movieId")
+//    suspend fun updateTitle(movieId: Int, newTitle: String)
 
 
 }
