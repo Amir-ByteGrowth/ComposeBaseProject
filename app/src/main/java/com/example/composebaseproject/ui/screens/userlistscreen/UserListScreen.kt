@@ -1,4 +1,4 @@
-package com.example.composebaseproject.ui.userlistscreen
+package com.example.composebaseproject.ui.screens.userlistscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

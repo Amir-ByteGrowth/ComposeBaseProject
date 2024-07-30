@@ -1,4 +1,4 @@
-package com.example.composebaseproject.ui.userlistscreen
+package com.example.composebaseproject.ui.screens.userlistscreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
