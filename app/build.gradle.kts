@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
+//    id ("kotlinx-serialization")
+
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 android {
@@ -117,5 +120,8 @@ dependencies {
     //Chucker for debuging api
     debugImplementation( libs.library)
     releaseImplementation( libs.library.no.op)
+
+    //serializable
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0") // Or the latest version
 
 }
